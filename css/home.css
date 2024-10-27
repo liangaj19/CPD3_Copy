@@ -1,0 +1,68 @@
+/* Default styling */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Nav bar */
+nav {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a {
+    text-decoration: none;
+    color: #173379;
+    font-size: clamp(24px, 4vw, 28px)
+}
+
+/* Header banner */
+header {
+    width: 100%;
+    background-color: #173379;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+header p {
+    font-size: 1.3rem;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+#meets h2 {
+    padding: 15px;
+    text-align: center;
+}
+
+#meets a {
+    display: inline-grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: #173379;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    margin: 10px 20px;
+    border-radius: 20px;
+}
+
+#meets a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+#meets a:active {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}

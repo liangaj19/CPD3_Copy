@@ -454,7 +454,7 @@ footer a:hover {
   .lightbox-content {
       display: block;
       margin: auto;
-      width: 35%;
+      width: 40%;
       max-width: 700px;
   }
 
@@ -466,12 +466,6 @@ footer a:hover {
       text-align: center;
       color: #ccc;
       padding: 10px 0;
-  }
-
-  #gallery img:focus {
-    transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
   }
 
   /* Close button for lightbox */

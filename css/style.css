@@ -455,14 +455,12 @@ footer a:hover {
       display: block;
       margin: auto;
       width: 40%;
-      max-width: 700px;
   }
 
   #caption {
       margin: auto;
       display: block;
       width: 80%;
-      max-width: 700px;
       text-align: center;
       color: #ccc;
       padding: 10px 0;

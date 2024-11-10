@@ -23,6 +23,11 @@ html {
   background: linear-gradient(to bottom, var(--bg-color-top), var(--bg-color-mid) 50%, var(--bg-color-bot) 75%);
 }
 
+/* Return to top button invisible in mobile view */
+#back-to-top {
+  display: none;
+}
+
 /* Default text styling */
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -46,6 +51,7 @@ header {
   width: 100%;
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 
 header h1 a {
@@ -315,6 +321,7 @@ details[open] > summary::before {
 #gallery img:hover {
   transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 /* Mobile Touch */
@@ -354,4 +361,136 @@ footer a:hover {
   }
 }
 
-/* Other media queries for larger screens to be added later */
+/* tablet, landscape iPad, lo-res laptops ands desktops */ 
+@media (min-width:961px)  { 
+
+  /* Make font sizes bigger */
+  header h1 a {
+    font-size: clamp(28px, 4vw, 30px);
+    padding-left: 20px;
+  }
+  
+  header h2 {
+    font-size: 1.5rem;
+    padding-left: 20px;
+  }
+
+  th {
+    font-size: 1.2rem;
+  }
+
+  /* Leave more padding space on the left and right */
+  main {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  main h2 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+
+  .summary h2 {
+    margin-top: 20px;
+  }
+
+  /* Style the nav bar */  
+  nav ul {
+    flex-direction: row;
+    padding: 5px 10px;
+  }
+  
+  nav ul li a {
+    font-size: 1.2rem;
+    margin-right: 30px;
+  }
+
+  /* Make back to top button visible for larger viewports */
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--bg-color);
+    color: var(--card-text);
+    border: none;
+    padding: 40px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  }
+
+  .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+  }
+
+  .close:hover, 
+  .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  .lightbox-content {
+      display: block;
+      margin: auto;
+      width: 35%;
+      max-width: 700px;
+  }
+
+  #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+  }
+
+  #gallery img:focus {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  /* Close button for lightbox */
+  .close {
+    position: absolute;
+    top: 100px; /* Adjust the position to ensure visibility */
+    right: 20px; /* Adjust the position to ensure visibility */
+    background: none;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it is above the lightbox content */
+  }
+
+  .close:hover,
+  .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      outline: none; /* Remove the default outline */
+  }
+}

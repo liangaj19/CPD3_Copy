@@ -50,7 +50,7 @@ def csv_to_html(csv_filename, output_folder):
         <h2>{h2_text}</h2>
 </header>
    <main id = "main">
-
+    <button id="back-to-top">Back to Top</button>
 
     <section class="summary" id = "summary">
       <h2>Race Summary</h2>
@@ -95,7 +95,7 @@ def csv_to_html(csv_filename, output_folder):
                 html_content += f"""
 <div class="athlete">
 <figure> 
-    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}"> 
+    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}" onerror="replaceImage(this)"> 
     <figcaption>{name}</figcaption>
 </figure>
 <dl>
@@ -118,6 +118,11 @@ def csv_to_html(csv_filename, output_folder):
         # Close the HTML document
         html_content += """
    </section>
+   <div id="lightbox" class="lightbox">
+            <button class="close" aria-label="Close">&times;</button>
+            <img class="lightbox-content" id="lightbox-img" alt="Expanded gallery image">
+            <div id="caption"></div>
+        </div>
    </details>
    </main>   
    <footer>
@@ -132,6 +137,7 @@ def csv_to_html(csv_filename, output_folder):
 
 
                      </footer>
+        <script src="../js/script.js"></script>
         </body>
 </html>
 """
@@ -204,7 +210,7 @@ def generate_image_tags(image_files, folder_path):
     for img in image_files:
         img_path = os.path.join(folder_path, img)
         # print(f"The image_path is {img_path}")
-        img_tags.append(f'<img src=../{img_path} width = "200" alt="">')
+        img_tags.append(f'<img src=../{img_path} width = "200" alt="" class="gallery-item" tabindex="0">')
     return "\n".join(img_tags)
 
 # Putting it all together
